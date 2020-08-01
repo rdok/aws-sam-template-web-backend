@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+
+  db:
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
+  aws:
+    image: amazon/aws-cli
+    depends_on: 
+      - db
+    volumes: 
+      - ~/.aws:/root/.aws
+      - ${PWD}:/aws
+    command: dynamodb describe-limits --endpoint-url http://db:8000
+
+networks:
+  default: 
+    name: basawal-api_conversations

@@ -1,4 +1,4 @@
-# basawal_api
+# aws-sam-template-web-backend
 ![test](https://github.com/rdok/aws-sam-template-web-backend/workflows/test/badge.svg)  
 
 ### Development
